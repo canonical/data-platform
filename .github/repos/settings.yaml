@@ -1,0 +1,71 @@
+#########################################################
+#
+# Based on https://github.com/roobre/reposettings
+#
+# Installation:
+# > sudo apt install python3 python3-github
+# > curl https://raw.githubusercontent.com/roobre/reposettings/master/reposettings.py -o reposettings.py
+#
+# Usage:
+# > GITHUB_TOKEN=<your-gh-token> python3 reposettings.py ./settings.yaml
+#
+#########################################################
+
+shared-config: &shared-config
+  branch-protection:
+    dismiss-stale-reviews: false
+    required-review-count: 2
+  protect-default-branch: true
+  features:
+    issues: true
+    projects: false
+    wiki: false
+    downloads: true
+  allow:
+    squash-merge: true
+    merge-commit: false
+    rebase-merge: false
+  delete-branch-on-merge: true
+
+repos:
+  canonical/charmed-mysql-container: *shared-config
+  canonical/data-integrator: *shared-config
+  canonical/data-platform-libs: *shared-config
+  canonical/kafka-bundle: *shared-config
+  canonical/kafka-k8s-operator: *shared-config
+  canonical/kafka-operator: *shared-config
+  canonical/mongodb-k8s-operator: *shared-config
+  canonical/mongodb-operator: *shared-config
+  canonical/mongodb-rock: *shared-config
+  canonical/charmed-mongodb-snap: *shared-config
+  canonical/mysql-bundle: *shared-config
+  canonical/mysql-k8s-bundle: *shared-config
+  canonical/mysql-k8s-operator: *shared-config
+  canonical/mysql-operator: *shared-config
+  canonical/mysql-server-snap: *shared-config
+  canonical/mysql-server-rock: *shared-config
+  canonical/mysql-router-k8s-operator: *shared-config
+  canonical/mysql-router-operator: *shared-config
+  canonical/mysql-router-container: *shared-config
+  canonical/mysql-router-snap: *shared-config
+  canonical/mysql-router-rock: *shared-config
+  canonical/opensearch-operator: *shared-config
+  canonical/opensearch-snap: *shared-config
+  canonical/pgbouncer-container: *shared-config
+  canonical/pgbouncer-k8s-operator: *shared-config
+  canonical/pgbouncer-operator: *shared-config
+  canonical/postgresql-bundle: *shared-config
+  canonical/postgresql-k8s-bundle: *shared-config
+  canonical/postgresql-k8s-operator: *shared-config
+  canonical/postgresql-operator: *shared-config
+  canonical/postgresql-patroni-container: *shared-config
+  canonical/redis-k8s-operator: *shared-config
+  canonical/redis-operator: *shared-config
+  canonical/snap-mysqld-exporter: *shared-config
+  canonical/spark-client-snap: *shared-config
+  canonical/spark-history-server-docker: *shared-config
+  canonical/template-operator: *shared-config
+  canonical/xtrabackup-snap: *shared-config
+  canonical/zookeeper-k8s-operator: *shared-config
+  canonical/zookeeper-operator: *shared-config
+  canonical/zookeeper-rock: *shared-config

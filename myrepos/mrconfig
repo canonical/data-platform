@@ -1,0 +1,150 @@
+############################################################
+#
+# The 'mr' tool is a helper to handle all Git repos locally.
+#
+# Installation:
+# > sudo apt install myrepos
+# > mkdir ~/canonical
+# > cp myrepos/mrconfig ~/canonical/.mrconfig
+# > echo "/home/<you>/canonical/.mrconfig" > ~/.mrtrust
+#
+# Usage:
+# > cd ~/canonical && mr up
+#
+############################################################
+
+[DEFAULT]
+# Teach mr how to `mr gc` in git repos.
+git_gc = git gc "$@"
+git_update = git pull --rebase
+git_main = git checkout main
+
+[charmed-mysql-container]
+checkout = git clone 'git@github.com:canonical/charmed-mysql-container' 'charmed-mysql-container'
+
+[data-platform]
+checkout = git clone 'git@github.com:canonical/data-platform' 'data-platform'
+
+[data-integrator]
+checkout = git clone 'git@github.com:canonical/data-integrator' 'data-integrator'
+
+[data-platform-libs]
+checkout = git clone 'git@github.com:canonical/data-platform-libs' 'data-platform-libs'
+
+[kafka-bundle]
+checkout = git clone 'git@github.com:canonical/kafka-bundle' 'kafka-bundle'
+
+[kafka-k8s-operator]
+checkout = git clone 'git@github.com:canonical/kafka-k8s-operator' 'kafka-k8s-operator'
+
+[kafka-operator]
+checkout = git clone 'git@github.com:canonical/kafka-operator' 'kafka-operator'
+
+[mongodb-k8s-operator]
+checkout = git clone 'git@github.com:canonical/mongodb-k8s-operator' 'mongodb-k8s-operator'
+
+[mongodb-operator]
+checkout = git clone 'git@github.com:canonical/miaaltieri/mongodb-operator' 'mongodb-operator'
+
+[mongodb-rock]
+checkout = git clone 'git@github.com:canonical/mongodb-rock' 'mongodb-rock'
+
+[charmed-mongodb-snap]
+checkout = git clone 'git@github.com:canonical/charmed-mongodb-snap' 'charmed-mongodb-snap'
+
+[mysql-bundle]
+checkout = git clone 'git@github.com:canonical/mysql-bundle' 'mysql-bundle'
+
+[mysql-k8s-bundle]
+checkout = git clone 'git@github.com:canonical/mysql-k8s-bundle' 'mysql-k8s-bundle'
+
+[mysql-k8s-operator]
+checkout = git clone 'git@github.com:canonical/mysql-k8s-operator' 'mysql-k8s-operator'
+
+[mysql-operator]
+checkout = git clone 'git@github.com:canonical/mysql-operator' 'mysql-operator'
+
+[mysql-server-snap]
+checkout = git clone 'git@github.com:canonical/mysql-server-snap' 'mysql-server-snap'
+
+[mysql-server-rock]
+checkout = git clone 'git@github.com:canonical/mysql-server-rock' 'mysql-server-rock'
+
+[mysql-router-k8s-operator]
+checkout = git clone 'git@github.com:canonical/mysql-router-k8s-operator' 'mysql-router-k8s-operator'
+
+[mysql-router-operator]
+checkout = git clone 'git@github.com:canonical/mysql-router-operator' 'mysql-router-operator'
+
+[mysql-router-container]
+checkout = git clone 'git@github.com:canonical/mysql-router-container' 'mysql-router-container'
+
+[mysql-router-snap]
+checkout = git clone 'git@github.com:canonical/mysql-router-snap' 'mysql-router-snap'
+
+[mysql-router-rock]
+checkout = git clone 'git@github.com:canonical/mysql-router-rock' 'mysql-router-rock'
+
+[opensearch-operator]
+checkout = git clone 'git@github.com:canonical/opensearch-operator' 'opensearch-operator'
+
+[opensearch-snap]
+checkout = git clone 'git@github.com:canonical/opensearch-snap' 'opensearch-snap'
+
+[pgbouncer-container]
+checkout = git clone 'git@github.com:canonical/pgbouncer-container' 'pgbouncer-container'
+
+[pgbouncer-k8s-operator]
+checkout = git clone 'git@github.com:canonical/pgbouncer-k8s-operator' 'pgbouncer-k8s-operator'
+
+[pgbouncer-operator]
+checkout = git clone 'git@github.com:canonical/pgbouncer-operator' 'pgbouncer-operator'
+
+[postgresql-bundle]
+checkout = git clone 'git@github.com:canonical/postgresql-bundle' 'postgresql-bundle'
+
+[postgresql-k8s-bundle]
+checkout = git clone 'git@github.com:canonical/postgresql-k8s-bundle' 'postgresql-k8s-bundle'
+
+[postgresql-k8s-operator]
+checkout = git clone 'git@github.com:canonical/postgresql-k8s-operator' 'postgresql-k8s-operator'
+
+[postgresql-operator]
+checkout = git clone 'git@github.com:canonical/postgresql-operator' 'postgresql-operator'
+
+[postgresql-patroni-container]
+checkout = git clone 'git@github.com:canonical/postgresql-patroni-container' 'postgresql-patroni-container'
+
+[redis-k8s-operator]
+checkout = git clone 'git@github.com:canonical/redis-k8s-operator' 'redis-k8s-operator'
+
+[redis-operator]
+checkout = git clone 'git@github.com:canonical/redis-operator' 'redis-operator'
+
+[s3-integrator]
+checkout = git clone 'git@github.com:canonical/s3-integrator' 's3-integrator'
+
+[snap-mysqld-exporter]
+checkout = git clone 'git@github.com:canonical/snap-mysqld-exporter' 'snap-mysqld-exporter'
+
+[spark-client-snap]
+checkout = git clone 'git@github.com:canonical/spark-client-snap' 'spark-client-snap'
+
+[spark-history-server-docker]
+checkout = git clone 'git@github.com:canonical/spark-history-server-docker' 'spark-history-server-docker'
+
+[template-operator]
+checkout = git clone 'git@github.com:canonical/template-operator' 'template-operator'
+
+[xtrabackup-snap]
+checkout = git clone 'git@github.com:canonical/xtrabackup-snap' 'xtrabackup-snap'
+
+[zookeeper-k8s-operator]
+checkout = git clone 'git@github.com:canonical/zookeeper-k8s-operator' 'zookeeper-k8s-operator'
+
+[zookeeper-operator]
+checkout = git clone 'git@github.com:canonical/zookeeper-operator' 'zookeeper-operator'
+
+[zookeeper-rock]
+checkout = git clone 'git@github.com:canonical/zookeeper-rock' 'zookeeper-rock'
+
