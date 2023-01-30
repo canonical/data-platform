@@ -19,17 +19,26 @@ git_gc = git gc "$@"
 git_update = git pull --rebase
 git_main = git checkout main
 
+[charmed-kafka-snap]
+checkout = git clone 'git@github.com:canonical/charmed-kafka-snap' 'charmed-kafka-snap'
+
+[charmed-mongodb-snap]
+checkout = git clone 'git@github.com:canonical/charmed-mongodb-snap' 'charmed-mongodb-snap'
+
 [charmed-mysql-container]
 checkout = git clone 'git@github.com:canonical/charmed-mysql-container' 'charmed-mysql-container'
-
-[data-platform]
-checkout = git clone 'git@github.com:canonical/data-platform' 'data-platform'
 
 [data-integrator]
 checkout = git clone 'git@github.com:canonical/data-integrator' 'data-integrator'
 
 [data-platform-libs]
 checkout = git clone 'git@github.com:canonical/data-platform-libs' 'data-platform-libs'
+
+[data-platform]
+checkout = git clone 'git@github.com:canonical/data-platform' 'data-platform'
+
+[kafka-k8s-bundle]
+checkout = git clone 'git@github.com:canonical/kafka-k8s-bundle' 'kafka-k8s-bundle'
 
 [kafka-bundle]
 checkout = git clone 'git@github.com:canonical/kafka-bundle' 'kafka-bundle'
@@ -49,9 +58,6 @@ checkout = git clone 'git@github.com:canonical/miaaltieri/mongodb-operator' 'mon
 [mongodb-rock]
 checkout = git clone 'git@github.com:canonical/mongodb-rock' 'mongodb-rock'
 
-[charmed-mongodb-snap]
-checkout = git clone 'git@github.com:canonical/charmed-mongodb-snap' 'charmed-mongodb-snap'
-
 [mysql-bundle]
 checkout = git clone 'git@github.com:canonical/mysql-bundle' 'mysql-bundle'
 
@@ -64,11 +70,8 @@ checkout = git clone 'git@github.com:canonical/mysql-k8s-operator' 'mysql-k8s-op
 [mysql-operator]
 checkout = git clone 'git@github.com:canonical/mysql-operator' 'mysql-operator'
 
-[mysql-server-snap]
-checkout = git clone 'git@github.com:canonical/mysql-server-snap' 'mysql-server-snap'
-
-[mysql-server-rock]
-checkout = git clone 'git@github.com:canonical/mysql-server-rock' 'mysql-server-rock'
+[mysql-router-container]
+checkout = git clone 'git@github.com:canonical/mysql-router-container' 'mysql-router-container'
 
 [mysql-router-k8s-operator]
 checkout = git clone 'git@github.com:canonical/mysql-router-k8s-operator' 'mysql-router-k8s-operator'
@@ -76,14 +79,11 @@ checkout = git clone 'git@github.com:canonical/mysql-router-k8s-operator' 'mysql
 [mysql-router-operator]
 checkout = git clone 'git@github.com:canonical/mysql-router-operator' 'mysql-router-operator'
 
-[mysql-router-container]
-checkout = git clone 'git@github.com:canonical/mysql-router-container' 'mysql-router-container'
-
 [mysql-router-snap]
 checkout = git clone 'git@github.com:canonical/mysql-router-snap' 'mysql-router-snap'
 
-[mysql-router-rock]
-checkout = git clone 'git@github.com:canonical/mysql-router-rock' 'mysql-router-rock'
+[mysql-server-snap]
+checkout = git clone 'git@github.com:canonical/mysql-server-snap' 'mysql-server-snap'
 
 [opensearch-operator]
 checkout = git clone 'git@github.com:canonical/opensearch-operator' 'opensearch-operator'
@@ -132,9 +132,6 @@ checkout = git clone 'git@github.com:canonical/spark-client-snap' 'spark-client-
 
 [spark-history-server-docker]
 checkout = git clone 'git@github.com:canonical/spark-history-server-docker' 'spark-history-server-docker'
-
-[template-operator]
-checkout = git clone 'git@github.com:canonical/template-operator' 'template-operator'
 
 [xtrabackup-snap]
 checkout = git clone 'git@github.com:canonical/xtrabackup-snap' 'xtrabackup-snap'
