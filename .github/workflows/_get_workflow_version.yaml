@@ -30,7 +30,7 @@ on:
         required: true
         type: string
       file-name:
-        description: Name of reusable workflow file (e.g. "build.yaml")
+        description: Name of reusable workflow file (e.g. "build-charms.yaml")
         required: true
         type: string
     outputs:
@@ -59,7 +59,7 @@ jobs:
           
           # Example: "canonical/charm-workflows"
           REPOSITORY = "${{ inputs.repository-name }}"
-          # Example: "build.yaml"
+          # Example: "build-charms.yaml"
           REUSABLE_WORKFLOW_FILE_NAME = "${{ inputs.file-name }}"
           CALL_PATTERN = re.compile(f"{REPOSITORY}/.github/workflows/{REUSABLE_WORKFLOW_FILE_NAME}@(.*)")
           
