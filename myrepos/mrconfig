@@ -34,6 +34,9 @@ checkout = git clone 'git@github.com:canonical/data-integrator' 'data-integrator
 [data-platform-libs]
 checkout = git clone 'git@github.com:canonical/data-platform-libs' 'data-platform-libs'
 
+[data-platform-workflows]
+checkout = git clone 'git@github.com:canonical/data-platform-workflows' 'data-platform-workflows'
+
 [data-platform]
 checkout = git clone 'git@github.com:canonical/data-platform' 'data-platform'
 

@@ -33,6 +33,7 @@ repos:
   canonical/charmed-mysql-container: *shared-config
   canonical/data-integrator: *shared-config
   canonical/data-platform-libs: *shared-config
+  canonical/data-platform-workflows: *shared-config
   canonical/data-platform: *shared-config
   canonical/kafka-k8s-bundle: *shared-config
   canonical/kafka-bundle: *shared-config
