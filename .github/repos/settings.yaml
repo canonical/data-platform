@@ -13,7 +13,7 @@
 
 shared-config: &shared-config
   branch-protection:
-    dismiss-stale-reviews: false
+    dissmiss-stale-reviews: false
     required-review-count: 2
   protect-default-branch: true
   features:
