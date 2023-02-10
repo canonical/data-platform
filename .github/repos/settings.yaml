@@ -38,6 +38,8 @@ repos:
   canonical/kafka-bundle: *shared-config
   canonical/kafka-k8s-operator: *shared-config
   canonical/kafka-operator: *shared-config
+  canonical/charmed-kafka-snap: *shared-config
+  canonical/charmed-kafka-rock: *shared-config
   canonical/mongodb-k8s-operator: *shared-config
   canonical/mongodb-operator: *shared-config
   canonical/mongodb-rock: *shared-config
@@ -65,8 +67,10 @@ repos:
   canonical/s3-integrator: *shared-config
   canonical/snap-mysqld-exporter: *shared-config
   canonical/spark-client-snap: *shared-config
-  canonical/spark-history-server-docker: *shared-config
+  canonical/spark-rock: *shared-config
+  canonical/spark-history-server-k8s-operator: *shared-config
   canonical/xtrabackup-snap: *shared-config
   canonical/zookeeper-k8s-operator: *shared-config
   canonical/zookeeper-operator: *shared-config
   canonical/zookeeper-rock: *shared-config
+  canonical/zookeeper-snap: *shared-config
