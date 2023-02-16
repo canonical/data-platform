@@ -53,10 +53,10 @@ checkout = git clone 'git@github.com:canonical/kafka-k8s-operator' 'kafka-k8s-op
 checkout = git clone 'git@github.com:canonical/kafka-operator' 'kafka-operator'
 
 [charmed-kafka-snap]
-checkout = git clone 'git@github.com/canonical/charmed-kafka-snap' 'charmed-kafka-snap'
+checkout = git clone 'git@github.com:canonical/charmed-kafka-snap' 'charmed-kafka-snap'
 
 [charmed-kafka-rock]
-checkout = git clone 'git@github.com/canonical/charmed-kafka-rock' 'charmed-kafka-rock'
+checkout = git clone 'git@github.com:canonical/charmed-kafka-rock' 'charmed-kafka-rock'
 
 [mongodb-k8s-operator]
 checkout = git clone 'git@github.com:canonical/mongodb-k8s-operator' 'mongodb-k8s-operator'
@@ -143,7 +143,7 @@ checkout = git clone 'git@github.com:canonical/spark-client-snap' 'spark-client-
 checkout = git clone 'git@github.com:canonical/spark-rock.git' 'spark-rock'
 
 [spark-history-server-k8s-operator]
-checkout = git clone 'git@github.com/canonical/spark-history-server-k8s-operator' 'spark-history-server-k8s-operator'
+checkout = git clone 'git@github.com:canonical/spark-history-server-k8s-operator' 'spark-history-server-k8s-operator'
 
 [xtrabackup-snap]
 checkout = git clone 'git@github.com:canonical/xtrabackup-snap' 'xtrabackup-snap'
