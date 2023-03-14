@@ -68,7 +68,7 @@ checkout = git clone 'git@github.com:canonical/mongodb-k8s-operator' 'mongodb-k8
 checkout = git clone 'git@github.com:canonical/miaaltieri/mongodb-operator' 'mongodb-operator'
 
 [charmed-mongodb-rock]
-checkout = git clone 'git@github.com:canonical/charmed-mongodb-rock' 'mongodb-rock'
+checkout = git clone 'git@github.com:canonical/charmed-mongodb-rock' 'charmed-mongodb-rock'
 
 [mysql-bundle]
 checkout = git clone 'git@github.com:canonical/mysql-bundle' 'mysql-bundle'
