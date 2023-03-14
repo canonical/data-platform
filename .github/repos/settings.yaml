@@ -44,7 +44,7 @@ repos:
   canonical/charmed-kafka-rock: *shared-config
   canonical/mongodb-k8s-operator: *shared-config
   canonical/mongodb-operator: *shared-config
-  canonical/mongodb-rock: *shared-config
+  canonical/charmed-mongodb-rock: *shared-config
   canonical/mysql-bundle: *shared-config
   canonical/mysql-k8s-bundle: *shared-config
   canonical/mysql-k8s-operator: *shared-config
