@@ -39,6 +39,7 @@ repos:
   canonical/kafka-bundle: *shared-config
   canonical/kafka-k8s-operator: *shared-config
   canonical/kafka-operator: *shared-config
+  canonical/kafka-test-app: *shared-config
   canonical/charmed-kafka-snap: *shared-config
   canonical/charmed-kafka-rock: *shared-config
   canonical/mongodb-k8s-operator: *shared-config

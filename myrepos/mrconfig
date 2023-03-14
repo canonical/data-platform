@@ -52,6 +52,9 @@ checkout = git clone 'git@github.com:canonical/kafka-k8s-operator' 'kafka-k8s-op
 [kafka-operator]
 checkout = git clone 'git@github.com:canonical/kafka-operator' 'kafka-operator'
 
+[kafka-test-app]
+checkout = git clone 'git@github.com:canonical/kafka-test-app' 'kafka-test-app'
+
 [charmed-kafka-snap]
 checkout = git clone 'git@github.com:canonical/charmed-kafka-snap' 'charmed-kafka-snap'
 
