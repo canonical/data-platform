@@ -97,6 +97,9 @@ checkout = git clone 'git@github.com:canonical/mysql-router-snap' 'mysql-router-
 [mysql-server-snap]
 checkout = git clone 'git@github.com:canonical/mysql-server-snap' 'mysql-server-snap'
 
+[mysql-test-app]
+checkout = git clone 'git@github.com:canonical/mysql-test-app' 'mysql-test-app'
+
 [opensearch-operator]
 checkout = git clone 'git@github.com:canonical/opensearch-operator' 'opensearch-operator'
 
