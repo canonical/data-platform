@@ -54,6 +54,7 @@ repos:
   canonical/mysql-router-operator: *shared-config
   canonical/mysql-router-snap: *shared-config
   canonical/mysql-server-snap: *shared-config
+  canonical/mysql-test-app: *shared-config
   canonical/opensearch-operator: *shared-config
   canonical/opensearch-snap: *shared-config
   canonical/pgbouncer-container: *shared-config
