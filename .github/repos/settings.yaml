@@ -38,6 +38,7 @@ repos:
   canonical/charmed-postgresql-rock: *shared-config
   canonical/charmed-postgresql-snap: *shared-config
   canonical/charmed-redis-rock: *shared-config
+  canonical/charmed-spark-rock: *shared-config
   canonical/data-integrator: *shared-config
   canonical/data-platform-libs: *shared-config
   canonical/data-platform-workflows: *shared-config
@@ -75,7 +76,6 @@ repos:
   canonical/snap-mysqld-exporter: *shared-config
   canonical/spark-client-snap: *shared-config
   canonical/spark-history-server-k8s-operator: *shared-config
-  canonical/spark-rock: *shared-config
   canonical/xtrabackup-snap: *shared-config
   canonical/zookeeper-k8s-operator: *shared-config
   canonical/zookeeper-operator: *shared-config

@@ -55,6 +55,9 @@ checkout = git clone 'git@github.com:canonical/charmed-postgresql-rock' 'charmed
 [charmed-redis-rock]
 checkout = git clone 'git@github.com:canonical/charmed-redis-rock' 'charmed-redis-rock'
 
+[charmed-spark-rock]
+checkout = git clone 'git@github.com:canonical/charmed-spark-rock' 'charmed-spark-rock'
+
 [data-integrator]
 checkout = git clone 'git@github.com:canonical/data-integrator' 'data-integrator'
 
@@ -162,9 +165,6 @@ checkout = git clone 'git@github.com:canonical/snap-mysqld-exporter' 'snap-mysql
 
 [spark-client-snap]
 checkout = git clone 'git@github.com:canonical/spark-client-snap' 'spark-client-snap'
-
-[spark-rock]
-checkout = git clone 'git@github.com:canonical/spark-rock.git' 'spark-rock'
 
 [spark-history-server-k8s-operator]
 checkout = git clone 'git@github.com:canonical/spark-history-server-k8s-operator' 'spark-history-server-k8s-operator'
