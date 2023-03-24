@@ -22,11 +22,38 @@ git_main = git checkout main
 [charmed-kafka-snap]
 checkout = git clone 'git@github.com:canonical/charmed-kafka-snap' 'charmed-kafka-snap'
 
+[charmed-kafka-rock]
+checkout = git clone 'git@github.com:canonical/charmed-kafka-rock' 'charmed-kafka-rock'
+
 [charmed-mongodb-snap]
 checkout = git clone 'git@github.com:canonical/charmed-mongodb-snap' 'charmed-mongodb-snap'
 
-[charmed-mysql-container]
-checkout = git clone 'git@github.com:canonical/charmed-mysql-container' 'charmed-mysql-container'
+[charmed-mongodb-rock]
+checkout = git clone 'git@github.com:canonical/charmed-mongodb-rock' 'charmed-mongodb-rock'
+
+[charmed-mysql-snap]
+checkout = git clone 'git@github.com:canonical/charmed-mysql-snap' 'charmed-mysql-snap'
+
+[charmed-mysql-rock]
+checkout = git clone 'git@github.com:canonical/charmed-mysql-rock' 'charmed-mysql-rock'
+
+#[charmed-opensearch-snap]
+#checkout = git clone 'git@github.com:canonical/charmed-opensearch-snap' 'charmed-opensearch-snap'
+
+[charmed-opensearch-rock]
+checkout = git clone 'git@github.com:canonical/charmed-opensearch-rock' 'charmed-opensearch-rock'
+
+[charmed-postgresql-snap]
+checkout = git clone 'git@github.com:canonical/charmed-postgresql-snap' 'charmed-postgresql-snap'
+
+[charmed-postgresql-rock]
+checkout = git clone 'git@github.com:canonical/charmed-postgresql-rock' 'charmed-postgresql-rock'
+
+#[charmed-redis-snap]
+#checkout = git clone 'git@github.com:canonical/charmed-redis-snap' 'charmed-redis-snap'
+
+[charmed-redis-rock]
+checkout = git clone 'git@github.com:canonical/charmed-redis-rock' 'charmed-redis-rock'
 
 [data-integrator]
 checkout = git clone 'git@github.com:canonical/data-integrator' 'data-integrator'
@@ -55,20 +82,11 @@ checkout = git clone 'git@github.com:canonical/kafka-operator' 'kafka-operator'
 [kafka-test-app]
 checkout = git clone 'git@github.com:canonical/kafka-test-app' 'kafka-test-app'
 
-[charmed-kafka-snap]
-checkout = git clone 'git@github.com:canonical/charmed-kafka-snap' 'charmed-kafka-snap'
-
-[charmed-kafka-rock]
-checkout = git clone 'git@github.com:canonical/charmed-kafka-rock' 'charmed-kafka-rock'
-
 [mongodb-k8s-operator]
 checkout = git clone 'git@github.com:canonical/mongodb-k8s-operator' 'mongodb-k8s-operator'
 
 [mongodb-operator]
 checkout = git clone 'git@github.com:canonical/miaaltieri/mongodb-operator' 'mongodb-operator'
-
-[charmed-mongodb-rock]
-checkout = git clone 'git@github.com:canonical/charmed-mongodb-rock' 'charmed-mongodb-rock'
 
 [mysql-bundle]
 checkout = git clone 'git@github.com:canonical/mysql-bundle' 'mysql-bundle'
