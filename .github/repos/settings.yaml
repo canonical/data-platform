@@ -28,23 +28,28 @@ shared-config: &shared-config
   delete-branch-on-merge: true
 
 repos:
+  canonical/charmed-kafka-rock: *shared-config
   canonical/charmed-kafka-snap: *shared-config
+  canonical/charmed-mongodb-rock: *shared-config
   canonical/charmed-mongodb-snap: *shared-config
-  canonical/charmed-mysql-container: *shared-config
+  canonical/charmed-mysql-rock: *shared-config
+  canonical/charmed-mysql-snap: *shared-config
+  canonical/charmed-opensearch-rock: *shared-config
+  canonical/charmed-postgresql-rock: *shared-config
+  canonical/charmed-postgresql-snap: *shared-config
+  canonical/charmed-redis-rock: *shared-config
+  canonical/charmed-spark-rock: *shared-config
   canonical/data-integrator: *shared-config
   canonical/data-platform-libs: *shared-config
   canonical/data-platform-workflows: *shared-config
   canonical/data-platform: *shared-config
-  canonical/kafka-k8s-bundle: *shared-config
   canonical/kafka-bundle: *shared-config
+  canonical/kafka-k8s-bundle: *shared-config
   canonical/kafka-k8s-operator: *shared-config
   canonical/kafka-operator: *shared-config
   canonical/kafka-test-app: *shared-config
-  canonical/charmed-kafka-snap: *shared-config
-  canonical/charmed-kafka-rock: *shared-config
   canonical/mongodb-k8s-operator: *shared-config
   canonical/mongodb-operator: *shared-config
-  canonical/charmed-mongodb-rock: *shared-config
   canonical/mysql-bundle: *shared-config
   canonical/mysql-k8s-bundle: *shared-config
   canonical/mysql-k8s-operator: *shared-config
@@ -70,7 +75,6 @@ repos:
   canonical/s3-integrator: *shared-config
   canonical/snap-mysqld-exporter: *shared-config
   canonical/spark-client-snap: *shared-config
-  canonical/spark-rock: *shared-config
   canonical/spark-history-server-k8s-operator: *shared-config
   canonical/xtrabackup-snap: *shared-config
   canonical/zookeeper-k8s-operator: *shared-config
