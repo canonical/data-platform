@@ -25,6 +25,8 @@ shared-config: &shared-config
     squash-merge: true
     merge-commit: false
     rebase-merge: false
+  squash_merge_commit_title: PR_TITLE
+  squash_merge_commit_message: PR_BODY
   delete-branch-on-merge: true
 
 repos:
