@@ -3,7 +3,9 @@
   "extends": [
     "config:recommended",
     ":disableRateLimiting",
-    ":noUnscheduledUpdates"
+    ":noUnscheduledUpdates",
+    // Avoid conflicts with custom `commitMessagePrefix`
+    ":semanticCommitsDisabled"
   ],
   "schedule": ["after 1am and before 2am every weekday"],
   "lockFileMaintenance": {
