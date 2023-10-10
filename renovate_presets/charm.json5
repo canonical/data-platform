@@ -38,6 +38,13 @@
       "commitMessagePrefix": "[python ci]",
       "groupName": "Python CI dependencies"
     },
+    // Use a separate group for Python updates
+    {
+      "matchManagers": ["poetry"],
+      "matchDepTypes": ["dependencies"],
+      "matchPackageNames": ["python"],
+      "groupName": "Python"
+    },
     // Group data-platform-workflows Python package & workflow updates into the same PR
     {
       "matchManagers": ["poetry"],
