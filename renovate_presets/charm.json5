@@ -35,6 +35,10 @@
       "matchPackageNames": ["python"],
       "groupName": "Python"
     },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub actions"
+    },
     // Group data-platform-workflows Python package & workflow updates into the same PR
     {
       "matchManagers": ["poetry"],
