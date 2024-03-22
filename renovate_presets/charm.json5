@@ -18,32 +18,26 @@
     // Later rules override earlier rules
     {
       "matchManagers": ["poetry"],
-      // Renovate uses "dependencies" instead of "main" for top-level dependency group
-      "matchDepTypes": ["dependencies"],
       "rangeStrategy": "bump",
-      "commitMessagePrefix": "[charm]",
-      "groupName": "charm dependencies"
+      "groupName": "Python dependencies"
     },
     {
       "matchManagers": ["poetry"],
       "matchDepTypes": ["charm-libs"],
       "rangeStrategy": "in-range-only",
-      "commitMessagePrefix": "[charm lib]",
-      "groupName": "charm lib dependencies"
-    },
-    {
-      "matchManagers": ["poetry"],
-      "matchDepTypes": ["format", "lint", "unit", "integration"],
-      "rangeStrategy": "bump",
-      "commitMessagePrefix": "[python ci]",
-      "groupName": "Python CI dependencies"
+      "groupName": "Python dependencies"
     },
     // Use a separate group for Python updates
     {
       "matchManagers": ["poetry"],
+      // Renovate uses "dependencies" instead of "main" for top-level dependency group
       "matchDepTypes": ["dependencies"],
       "matchPackageNames": ["python"],
       "groupName": "Python"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub actions"
     },
     // Group data-platform-workflows Python package & workflow updates into the same PR
     {
