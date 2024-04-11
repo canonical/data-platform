@@ -27,13 +27,14 @@
       "rangeStrategy": "in-range-only",
       "groupName": "Python dependencies"
     },
-    // Use a separate group for Python updates
+    // Disable Python updates
+    // (Python version should be updated when Ubuntu version is updated)
     {
       "matchManagers": ["poetry"],
       // Renovate uses "dependencies" instead of "main" for top-level dependency group
       "matchDepTypes": ["dependencies"],
       "matchPackageNames": ["python"],
-      "groupName": "Python"
+      "enabled": false
     },
     {
       "matchManagers": ["github-actions"],
