@@ -66,18 +66,18 @@
       "matchPackageNames": ["juju/juju"],
       "groupName": "Juju agents"
     },
-    // Disable major version updates for Juju agent (they should be handled manually)
+    // Disable major & minor version updates for Juju agent (they should be handled manually)
     {
       "matchManagers": ["regex"],
       "matchPackageNames": ["juju/juju"],
-      "matchUpdateTypes": ["major"],
+      "matchUpdateTypes": ["major", "minor"],
       "enabled": false
     },
   ],
   "regexManagers": [
     {
       "fileMatch": ["^\\.github/workflows/[^/]+\\.ya?ml$"],
-      "matchStrings": ["(?<currentValue>[0-9.]+) +# renovate: juju-agent-pin-major"],
+      "matchStrings": ["(?<currentValue>[0-9.]+) +# renovate: juju-agent-pin-minor"],
       "depNameTemplate": "juju/juju",
       "extractVersionTemplate": "^juju-(?<version>.*)$",
       "datasourceTemplate": "github-releases",
