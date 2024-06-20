@@ -73,12 +73,11 @@
       "matchUpdateTypes": ["major", "minor"],
       "enabled": false
     },
-    // Get latest microk8s release
     {
       "matchDepNames": ["Microk8s"],
       "matchPackageNames": ["canonical/microk8s"],
       "extractVersion": "^v(?<version>.*)$",
-      "groupName": "Microk8s"
+      "groupName": "MicroK8s"
     }
   ],
   "regexManagers": [
@@ -95,7 +94,7 @@
       "customType": "regex",
       "fileMatch": ["^(workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$"],
       "matchStrings": [
-        "microk8s-snap-channel: (?<currentValue>.*?)-strict/stable +# renovate: latest microk8s"
+        "microk8s-snap-channel: (?<currentValue>.*?)-strict/stable +# renovate: latest strict microk8s"
       ],
       "depNameTemplate": "Microk8s",
       "packageNameTemplate": "canonical/microk8s",
