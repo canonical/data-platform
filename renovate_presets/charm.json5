@@ -74,9 +74,9 @@
       "enabled": false
     },
     {
-      "matchDepNames": ["Microk8s"],
+      "matchManagers": ["regex"],
       "matchPackageNames": ["canonical/microk8s"],
-      "extractVersion": "^v(?<version>.*)$",
+      "matchUpdateTypes": ["major", "minor"],
       "groupName": "MicroK8s"
     }
   ],
@@ -85,22 +85,20 @@
       "fileMatch": ["^\\.github/workflows/[^/]+\\.ya?ml$"],
       "matchStrings": ["(?<currentValue>[0-9.]+) +# renovate: juju-agent-pin-minor"],
       "depNameTemplate": "juju/juju",
-      "extractVersionTemplate": "^juju-(?<version>.*)$",
+      "extractVersionTemplate": "^v(?<version>.*)$",
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "semver"
     },
     // Update microk8s to latest release
     {
-      "customType": "regex",
-      "fileMatch": ["^(workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$"],
+      "fileMatch": ["^\\.github/workflows/[^/]+\\.ya?ml$"],
       "matchStrings": [
-        "microk8s-snap-channel: (?<currentValue>.*?)-strict/stable +# renovate: latest strict microk8s"
+        "(?<currentValue>[0-9.]+)[a-z-]*/[a-z]+ +# renovate: latest strict microk8s"
       ],
-      "depNameTemplate": "Microk8s",
-      "packageNameTemplate": "canonical/microk8s",
+      "depNameTemplate": "canonical/microk8s",
+      "extractVersionTemplate": "^v(?<version>.*)$",
       "datasourceTemplate": "github-releases",
-      "versioningTemplate": "loose",
-      "extractVersionTemplate": "Microk8s release"
+      "versioningTemplate": "loose"
     }
   ]
 }
