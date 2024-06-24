@@ -73,15 +73,32 @@
       "matchUpdateTypes": ["major", "minor"],
       "enabled": false
     },
+    {
+      "matchManagers": ["regex"],
+      "matchPackageNames": ["canonical/microk8s"],
+      "matchUpdateTypes": ["major", "minor"],
+      "groupName": "MicroK8s"
+    }
   ],
   "regexManagers": [
     {
       "fileMatch": ["^\\.github/workflows/[^/]+\\.ya?ml$"],
       "matchStrings": ["(?<currentValue>[0-9.]+) +# renovate: juju-agent-pin-minor"],
       "depNameTemplate": "juju/juju",
-      "extractVersionTemplate": "^juju-(?<version>.*)$",
+      "extractVersionTemplate": "^v(?<version>.*)$",
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "semver"
+    },
+    // Update microk8s to latest release
+    {
+      "fileMatch": ["^\\.github/workflows/[^/]+\\.ya?ml$"],
+      "matchStrings": [
+        "(?<currentValue>[0-9.]+)[a-z-]*/[a-z]+ +# renovate: latest microk8s"
+      ],
+      "depNameTemplate": "canonical/microk8s",
+      "extractVersionTemplate": "^v(?<version>.*)$",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "semver-coerced"
     }
   ]
 }
