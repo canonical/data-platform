@@ -64,7 +64,8 @@
     {
       "matchManagers": ["regex"],
       "matchPackageNames": ["juju/juju"],
-      "groupName": "Juju agents"
+      "groupName": "Juju agents",
+      "separateMinorPatch": true
     },
     // Disable major & minor version updates for Juju agent (they should be handled manually)
     {
