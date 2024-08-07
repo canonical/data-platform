@@ -33,7 +33,7 @@
       "matchManagers": ["poetry"],
       // Renovate uses "dependencies" instead of "main" for top-level dependency group
       "matchDepTypes": ["dependencies"],
-      "matchPackageNames": ["python"],
+      "matchDepNames": ["python"],
       "enabled": false
     },
     {
