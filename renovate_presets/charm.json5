@@ -85,7 +85,7 @@
     {
       "fileMatch": ["^\\.github/workflows/[^/]+\\.ya?ml$"],
       "matchStrings": ["(?<currentValue>[0-9.]+) +# renovate: juju-agent-pin-minor"],
-      "depNameTemplate": "juju/juju",
+      "packageNameTemplate": "juju/juju",
       "extractVersionTemplate": "^v(?<version>.*)$",
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "semver"
@@ -96,7 +96,7 @@
       "matchStrings": [
         "(?<currentValue>[0-9.]+)[a-z-]*/[a-z]+ +# renovate: latest microk8s"
       ],
-      "depNameTemplate": "canonical/microk8s",
+      "packageNameTemplate": "canonical/microk8s",
       "extractVersionTemplate": "^v(?<version>.*)$",
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "semver-coerced"
