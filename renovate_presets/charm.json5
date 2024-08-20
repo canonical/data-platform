@@ -83,7 +83,8 @@
     {
       "matchManagers": ["regex"],
       "matchDatasources": ["docker"],
-      "pinDigests": true
+      "pinDigests": true,
+      "groupName": "OCI digests"
     }
   ],
   "regexManagers": [
@@ -111,7 +112,7 @@
       "fileMatch": ["^metadata\\.yaml$"],
 
       "matchStrings": [
-        "upstream-source: (?<depName>.*)@(?<currentDigest>sha256:[0-9a-f]*) +# renovate: oci-image tag: (?<currentValue>.*)"
+        "upstream-source: (?<depName>.*?)@(?<currentDigest>sha256:[0-9a-f]+) +# renovate: oci-image tag: (?<currentValue>.*?)\n"
       ],
       "datasourceTemplate": "docker"
     }
