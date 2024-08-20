@@ -79,6 +79,11 @@
       "matchPackageNames": ["canonical/microk8s"],
       "matchUpdateTypes": ["major", "minor"],
       "groupName": "MicroK8s"
+    },
+    {
+      "matchManagers": ["regex"],
+      "matchDatasources": ["docker"],
+      "pinDigests": true
     }
   ],
   "regexManagers": [
@@ -100,6 +105,15 @@
       "extractVersionTemplate": "^v(?<version>.*)$",
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "semver-coerced"
+    },
+    // Update rock images
+    {
+      "fileMatch": ["^metadata\\.yaml$"],
+
+      "matchStrings": [
+        "upstream-source: (?<depName>.*)@(?<currentDigest>sha256:[0-9a-f]*) +# renovate: oci-image tag: (?<currentValue>.*)"
+      ],
+      "datasourceTemplate": "docker"
     }
   ]
 }
