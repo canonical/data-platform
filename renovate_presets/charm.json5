@@ -85,10 +85,17 @@
       "matchDatasources": ["docker"],
       "pinDigests": true,
       "groupName": "OCI digests"
+    },
+    // Update pip & poetry versions in charmcraft.yaml
+    {
+      "matchManagers": ["regex"],
+      "matchDepNames": ["pip", "poetry"],
+      "groupName": "charmcraft.yaml build tools"
     }
   ],
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "fileMatch": ["^\\.github/workflows/[^/]+\\.ya?ml$"],
       "matchStrings": ["(?<currentValue>[0-9.]+) +# renovate: juju-agent-pin-minor"],
       "packageNameTemplate": "juju/juju",
@@ -98,6 +105,7 @@
     },
     // Update microk8s to latest release
     {
+      "customType": "regex",
       "fileMatch": ["^\\.github/workflows/[^/]+\\.ya?ml$"],
       "matchStrings": [
         "(?<currentValue>[0-9.]+)[a-z-]*/[a-z]+ +# renovate: latest microk8s"
@@ -109,12 +117,28 @@
     },
     // Update rock images
     {
+      "customType": "regex",
       "fileMatch": ["^metadata\\.yaml$"],
-
       "matchStrings": [
         "upstream-source: (?<depName>.*?)@(?<currentDigest>sha256:[0-9a-f]+) +# renovate: oci-image tag: (?<currentValue>.*?)\n"
       ],
       "datasourceTemplate": "docker"
+    },
+    // Update pip version in charmcraft.yaml
+    {
+      "customType": "regex",
+      "fileMatch": ["^charmcraft\\.yaml$"],
+      "matchStrings": ["==(?<currentValue>.+?) +# renovate: charmcraft-pip-latest"],
+      "depNameTemplate": "pip",
+      "datasourceTemplate": "pypi"
+    },
+    // Update poetry version in charmcraft.yaml
+    {
+      "customType": "regex",
+      "fileMatch": ["^charmcraft\\.yaml$"],
+      "matchStrings": [" (?<currentValue>[^ ]+?) +# renovate: charmcraft-poetry-latest"],
+      "depNameTemplate": "poetry",
+      "datasourceTemplate": "pypi"
     }
   ]
 }
