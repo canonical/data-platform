@@ -141,8 +141,12 @@
       "matchStrings": [" (?<currentValue>[^ ]+) +# renovate: charmcraft-python-ubuntu-22\\.04"],
       // "python3" package does not have the correct Python patch version; use "python3.10" instead
       "depNameTemplate": "python3.10",
+      // Remove debian revision from version
+      // (https://www.debian.org/doc/debian-policy/ch-controlfields.html#version)
+      "extractVersionTemplate": "^(?<version>.+?)(-[^-]*)?$",
+      "datasourceTemplate": "deb",
       "registryUrlTemplate": "https://archive.ubuntu.com/ubuntu/?release=jammy&components=main&binaryArch=amd64",
-      "datasourceTemplate": "deb"
+      "versioningTemplate": "semver"
     },
     // Update poetry version in charmcraft.yaml
     {
