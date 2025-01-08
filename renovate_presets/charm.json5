@@ -80,10 +80,9 @@
       "pinDigests": true,
       "groupName": "OCI digests"
     },
-    // Update build tools in charmcraft.yaml
     {
       "matchManagers": ["regex"],
-      "matchDepNames": ["pip", "uv", "python3.10", "poetry", "poetry-plugin-export"],
+      "matchFileNames": ["charmcraft.yaml"],
       "groupName": "charmcraft.yaml build tools"
     }
   ],
