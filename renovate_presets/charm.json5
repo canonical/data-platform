@@ -145,7 +145,7 @@
       // (https://www.debian.org/doc/debian-policy/ch-controlfields.html#version)
       "extractVersionTemplate": "^(?<version>.+?)(-[^-]*)?$",
       "datasourceTemplate": "deb",
-      "registryUrlTemplate": "https://archive.ubuntu.com/ubuntu/?release=jammy&components=main&binaryArch=amd64",
+      "registryUrlTemplate": "https://archive.ubuntu.com/ubuntu/?release=jammy-updates&components=main&binaryArch=amd64",
       "versioningTemplate": "semver"
     },
     // Update poetry version in charmcraft.yaml
