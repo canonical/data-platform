@@ -162,6 +162,15 @@
       "matchStrings": ["poetry-plugin-export==(?<currentValue>[^ ]+)[^\\n]* # renovate: charmcraft-poetry-latest"],
       "depNameTemplate": "poetry-plugin-export",
       "datasourceTemplate": "pypi"
+    },
+    // Update rust version in charmcraft.yaml
+    {
+      "customType": "regex",
+      "fileMatch": ["^charmcraft\\.yaml$"],
+      "matchStrings": [" (?<currentValue>[^ ]+) +# renovate: charmcraft-rust-latest"],
+      "packageNameTemplate": "rust-lang/rust",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "semver"
     }
   ]
 }
