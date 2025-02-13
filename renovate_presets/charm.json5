@@ -13,6 +13,8 @@
     "schedule": ["after 1am and before 3am every weekday"]
   },
   "timezone": "Etc/UTC",
+  // Exclude Renovate PRs from auto-generated release notes
+  "labels": ["not bug or enhancement"],
   "enabledManagers": ["poetry", "github-actions", "regex"],
   "packageRules": [
     // Later rules override earlier rules
