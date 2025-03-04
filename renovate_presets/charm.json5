@@ -7,10 +7,10 @@
     // Avoid conflicts with custom `commitMessagePrefix`
     ":semanticCommitsDisabled"
   ],
-  "schedule": ["after 1am and before 3am every weekday"],
+  "schedule": ["* 1-5 * * 2"],  // Tuesday 01:00-05:00 UTC
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["after 1am and before 3am every weekday"]
+    "schedule": ["* 1-5 * * 2"]  // Tuesday 01:00-05:00 UTC
   },
   "timezone": "Etc/UTC",
   // Exclude Renovate PRs from auto-generated release notes
