@@ -84,7 +84,7 @@
     },
     {
       "matchManagers": ["regex"],
-      "matchFileNames": ["charmcraft.yaml"],
+      "matchFileNames": ["**/charmcraft.yaml"],
       "groupName": "charmcraft.yaml build tools"
     }
   ],
@@ -113,7 +113,7 @@
     // Update rock images
     {
       "customType": "regex",
-      "fileMatch": ["^metadata\\.yaml$"],
+      "fileMatch": ["(^|/)metadata\\.yaml$"],
       "matchStrings": [
         "upstream-source: (?<depName>.*?)@(?<currentDigest>sha256:[0-9a-f]+) +# renovate: oci-image tag: (?<currentValue>.*?)\n"
       ],
@@ -122,7 +122,7 @@
     // Update pip version in charmcraft.yaml
     {
       "customType": "regex",
-      "fileMatch": ["^charmcraft\\.yaml$"],
+      "fileMatch": ["(^|/)charmcraft\\.yaml$"],
       "matchStrings": ["==(?<currentValue>[^ ]+) +# renovate: charmcraft-pip-latest"],
       "depNameTemplate": "pip",
       "datasourceTemplate": "pypi"
@@ -130,7 +130,7 @@
     // Update uv version in charmcraft.yaml
     {
       "customType": "regex",
-      "fileMatch": ["^charmcraft\\.yaml$"],
+      "fileMatch": ["(^|/)charmcraft\\.yaml$"],
       "matchStrings": ["download\\/(?<currentValue>[^/]+)\\/[^\\n]* # renovate: charmcraft-uv-latest"],
       "depNameTemplate": "uv",
       "datasourceTemplate": "pypi"
@@ -138,7 +138,7 @@
     // Update Python version in charmcraft.yaml
     {
       "customType": "regex",
-      "fileMatch": ["^charmcraft\\.yaml$"],
+      "fileMatch": ["(^|/)charmcraft\\.yaml$"],
       "matchStrings": [" (?<currentValue>[^ ]+) +# renovate: charmcraft-python-ubuntu-22\\.04"],
       // "python3" package does not have the correct Python patch version; use "python3.10" instead
       "depNameTemplate": "python3.10",
@@ -152,7 +152,7 @@
     // Update poetry version in charmcraft.yaml
     {
       "customType": "regex",
-      "fileMatch": ["^charmcraft\\.yaml$"],
+      "fileMatch": ["(^|/)charmcraft\\.yaml$"],
       "matchStrings": ["poetry==(?<currentValue>[^ ]+)[^\\n]* # renovate: charmcraft-poetry-latest"],
       "depNameTemplate": "poetry",
       "datasourceTemplate": "pypi"
@@ -160,7 +160,7 @@
     // Update poetry-plugin-export version in charmcraft.yaml
     {
       "customType": "regex",
-      "fileMatch": ["^charmcraft\\.yaml$"],
+      "fileMatch": ["(^|/)charmcraft\\.yaml$"],
       "matchStrings": ["poetry-plugin-export==(?<currentValue>[^ ]+)[^\\n]* # renovate: charmcraft-poetry-latest"],
       "depNameTemplate": "poetry-plugin-export",
       "datasourceTemplate": "pypi"
@@ -168,7 +168,7 @@
     // Update rust version in charmcraft.yaml
     {
       "customType": "regex",
-      "fileMatch": ["^charmcraft\\.yaml$"],
+      "fileMatch": ["(^|/)charmcraft\\.yaml$"],
       "matchStrings": [" (?<currentValue>[^ ]+) +# renovate: charmcraft-rust-latest"],
       "packageNameTemplate": "rust-lang/rust",
       "datasourceTemplate": "github-releases",
