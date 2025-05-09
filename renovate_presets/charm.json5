@@ -15,11 +15,11 @@
   "timezone": "Etc/UTC",
   // Exclude Renovate PRs from auto-generated release notes
   "labels": ["not bug or enhancement"],
-  "enabledManagers": ["poetry", "github-actions", "regex"],
+  "enabledManagers": ["poetry", "pep621", "github-actions", "regex"],
   "packageRules": [
     // Later rules override earlier rules
     {
-      "matchManagers": ["poetry"],
+      "matchManagers": ["poetry", "pep621"],
       "rangeStrategy": "bump",
       "groupName": "Python dependencies"
     },
@@ -29,6 +29,14 @@
       "rangeStrategy": "in-range-only",
       "groupName": "Python dependencies"
     },
+    {
+      "matchManagers": ["pep621"],
+      "rangeStrategy": "in-range-only",
+      "matchJsonata": [
+          "depType = 'dependency-groups' and managerData.depGroup = 'charm-libs'"
+      ],
+      "groupName": "Python dependencies"
+    },
     // Disable Python updates
     // (Python version should be updated when Ubuntu version is updated)
     {
@@ -36,6 +44,12 @@
       // Renovate uses "dependencies" instead of "main" for top-level dependency group
       "matchDepTypes": ["dependencies"],
       "matchDepNames": ["python"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["pep621"],
+      "matchDepNames": ["python"],
+      "matchDatasources": ["python-version"],
       "enabled": false
     },
     {
