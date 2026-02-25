@@ -8,14 +8,11 @@
     ":semanticCommitsDisabled"
   ],
   "schedule": ["* 1-5 * * 2"],  // Tuesday 01:00-05:00 UTC
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": ["* 1-5 * * 2"]  // Tuesday 01:00-05:00 UTC
-  },
+  "lockFileMaintenance": {"enabled": true, "schedule": ["* 1-5 * * 2"]},  // Tuesday 01:00-05:00 UTC
   "timezone": "Etc/UTC",
   // Exclude Renovate PRs from auto-generated release notes
   "labels": ["not bug or enhancement"],
-  "enabledManagers": ["poetry", "github-actions", "regex"],
+  "enabledManagers": ["poetry", "github-actions", "custom.regex"],
   "packageRules": [
     // Later rules override earlier rules
     {
@@ -38,10 +35,7 @@
       "matchDepNames": ["python"],
       "enabled": false
     },
-    {
-      "matchManagers": ["github-actions"],
-      "groupName": "GitHub actions"
-    },
+    {"matchManagers": ["github-actions"], "groupName": "GitHub actions"},
     // Group data-platform-workflows Python package & workflow updates into the same PR
     {
       "matchManagers": ["poetry"],
@@ -58,32 +52,32 @@
       "groupName": "data-platform-workflows"
     },
     {
-      "matchManagers": ["regex"],
+      "matchManagers": ["custom.regex"],
       "matchPackageNames": ["juju/juju"],
       "groupName": "Juju agents",
       "separateMinorPatch": true  // Since minor version updates are disabled
     },
     // Disable major & minor version updates for Juju agent (they should be handled manually)
     {
-      "matchManagers": ["regex"],
+      "matchManagers": ["custom.regex"],
       "matchPackageNames": ["juju/juju"],
       "matchUpdateTypes": ["major", "minor"],
       "enabled": false
     },
     {
-      "matchManagers": ["regex"],
+      "matchManagers": ["custom.regex"],
       "matchPackageNames": ["canonical/microk8s"],
       "matchUpdateTypes": ["major", "minor"],
       "groupName": "MicroK8s"
     },
     {
-      "matchManagers": ["regex"],
+      "matchManagers": ["custom.regex"],
       "matchDatasources": ["docker"],
       "pinDigests": true,
       "groupName": "OCI digests"
     },
     {
-      "matchManagers": ["regex"],
+      "matchManagers": ["custom.regex"],
       "matchFileNames": ["**/charmcraft.yaml"],
       "groupName": "charmcraft.yaml build tools"
     }
@@ -91,8 +85,10 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^\\.github/workflows/[^/]+\\.ya?ml$"],
-      "matchStrings": ["(?<currentValue>[0-9.]+) +# renovate: juju-agent-pin-minor"],
+      "managerFilePatterns": ["/^\\.github/workflows/[^/]+\\.ya?ml$/"],
+      "matchStrings": [
+        "(?<currentValue>[0-9.]+) +# renovate: juju-agent-pin-minor"
+      ],
       "packageNameTemplate": "juju/juju",
       "extractVersionTemplate": "^v(?<version>.*)$",
       "datasourceTemplate": "github-releases",
@@ -101,7 +97,7 @@
     // Update microk8s to latest release
     {
       "customType": "regex",
-      "fileMatch": ["^\\.github/workflows/[^/]+\\.ya?ml$"],
+      "managerFilePatterns": ["/^\\.github/workflows/[^/]+\\.ya?ml$/"],
       "matchStrings": [
         "(?<currentValue>[0-9.]+)[a-z-]*/[a-z]+ +# renovate: latest microk8s"
       ],
@@ -113,7 +109,7 @@
     // Update rock images
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)metadata\\.yaml$"],
+      "managerFilePatterns": ["/(^|/)metadata\\.yaml$/"],
       "matchStrings": [
         "upstream-source: (?<depName>.*?)@(?<currentDigest>sha256:[0-9a-f]+) +# renovate: oci-image tag: (?<currentValue>.*?)\n"
       ],
@@ -122,24 +118,30 @@
     // Update pip version in charmcraft.yaml
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)charmcraft\\.yaml$"],
-      "matchStrings": ["==(?<currentValue>[^ ]+) +# renovate: charmcraft-pip-latest"],
+      "managerFilePatterns": ["/(^|/)charmcraft\\.yaml$/"],
+      "matchStrings": [
+        "==(?<currentValue>[^ ]+) +# renovate: charmcraft-pip-latest"
+      ],
       "depNameTemplate": "pip",
       "datasourceTemplate": "pypi"
     },
     // Update uv version in charmcraft.yaml
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)charmcraft\\.yaml$"],
-      "matchStrings": ["download\\/(?<currentValue>[^/]+)\\/[^\\n]* # renovate: charmcraft-uv-latest"],
+      "managerFilePatterns": ["/(^|/)charmcraft\\.yaml$/"],
+      "matchStrings": [
+        "download\\/(?<currentValue>[^/]+)\\/[^\\n]* # renovate: charmcraft-uv-latest"
+      ],
       "depNameTemplate": "uv",
       "datasourceTemplate": "pypi"
     },
     // Update Python version in charmcraft.yaml
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)charmcraft\\.yaml$"],
-      "matchStrings": [" (?<currentValue>[^ ]+) +# renovate: charmcraft-python-ubuntu-22\\.04"],
+      "managerFilePatterns": ["/(^|/)charmcraft\\.yaml$/"],
+      "matchStrings": [
+        " (?<currentValue>[^ ]+) +# renovate: charmcraft-python-ubuntu-22\\.04"
+      ],
       // "python3" package does not have the correct Python patch version; use "python3.10" instead
       "depNameTemplate": "python3.10",
       // Remove debian revision from version
@@ -152,24 +154,30 @@
     // Update poetry version in charmcraft.yaml
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)charmcraft\\.yaml$"],
-      "matchStrings": ["poetry==(?<currentValue>[^ ]+)[^\\n]* # renovate: charmcraft-poetry-latest"],
+      "managerFilePatterns": ["/(^|/)charmcraft\\.yaml$/"],
+      "matchStrings": [
+        "poetry==(?<currentValue>[^ ]+)[^\\n]* # renovate: charmcraft-poetry-latest"
+      ],
       "depNameTemplate": "poetry",
       "datasourceTemplate": "pypi"
     },
     // Update poetry-plugin-export version in charmcraft.yaml
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)charmcraft\\.yaml$"],
-      "matchStrings": ["poetry-plugin-export==(?<currentValue>[^ ]+)[^\\n]* # renovate: charmcraft-poetry-latest"],
+      "managerFilePatterns": ["/(^|/)charmcraft\\.yaml$/"],
+      "matchStrings": [
+        "poetry-plugin-export==(?<currentValue>[^ ]+)[^\\n]* # renovate: charmcraft-poetry-latest"
+      ],
       "depNameTemplate": "poetry-plugin-export",
       "datasourceTemplate": "pypi"
     },
     // Update rust version in charmcraft.yaml
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)charmcraft\\.yaml$"],
-      "matchStrings": [" (?<currentValue>[^ ]+) +# renovate: charmcraft-rust-latest"],
+      "managerFilePatterns": ["/(^|/)charmcraft\\.yaml$/"],
+      "matchStrings": [
+        " (?<currentValue>[^ ]+) +# renovate: charmcraft-rust-latest"
+      ],
       "packageNameTemplate": "rust-lang/rust",
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "semver"
