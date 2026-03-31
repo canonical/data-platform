@@ -1,20 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    ":disableRateLimiting",
-    ":noUnscheduledUpdates",
-    // Avoid conflicts with custom `commitMessagePrefix`
-    ":semanticCommitsDisabled"
-  ],
-  "schedule": ["* 1-5 * * 2"],  // Tuesday 01:00-05:00 UTC
-  "lockFileMaintenance": {"enabled": true, "schedule": ["* 1-5 * * 2"]},  // Tuesday 01:00-05:00 UTC
-  "timezone": "Etc/UTC",
+  "extends": ["github>canonical/data-platform//renovate_presets/base.json5"],
   // Exclude Renovate PRs from auto-generated release notes
   "labels": ["not bug or enhancement"],
-  "enabledManagers": ["poetry", "github-actions", "custom.regex"],
+  "enabledManagers": ["github-actions", "poetry", "custom.regex"],
   "packageRules": [
     // Later rules override earlier rules
+
     {
       "matchManagers": ["poetry"],
       "rangeStrategy": "bump",
@@ -35,7 +27,6 @@
       "matchDepNames": ["python"],
       "enabled": false
     },
-    {"matchManagers": ["github-actions"], "groupName": "GitHub actions"},
     {
       "matchManagers": ["custom.regex"],
       "matchPackageNames": ["juju/juju"],
