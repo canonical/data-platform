@@ -6,7 +6,10 @@
   "enabledManagers": ["github-actions", "poetry", "custom.regex"],
   "packageRules": [
     // Later rules override earlier rules
-
+    {
+      "matchDatasources": ["pypi"],
+      "minimumReleaseAge": "1 day"
+    },
     {
       "matchManagers": ["poetry"],
       "rangeStrategy": "bump",
