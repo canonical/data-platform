@@ -3,7 +3,7 @@
   "extends": ["github>canonical/data-platform//renovate_presets/base.json5"],
   // Exclude Renovate PRs from auto-generated release notes
   "labels": ["not bug or enhancement"],
-  "enabledManagers": ["github-actions", "poetry", "custom.regex"],
+  "enabledManagers": ["github-actions", "poetry", "pep621", "custom.regex"],
   "packageRules": [
     // Later rules override earlier rules
     {
@@ -11,7 +11,7 @@
       "minimumReleaseAge": "1 day"
     },
     {
-      "matchManagers": ["poetry"],
+      "matchManagers": ["poetry", "pep621"],
       "rangeStrategy": "bump",
       "groupName": "Python dependencies"
     },
@@ -19,6 +19,14 @@
       "matchManagers": ["poetry"],
       "matchDepTypes": ["charm-libs"],
       "rangeStrategy": "in-range-only",
+      "groupName": "Python dependencies"
+    },
+    {
+      "matchManagers": ["pep621"],
+      "rangeStrategy": "in-range-only",
+      "matchJsonata": [
+          "depType = 'dependency-groups' and managerData.depGroup = 'charm-libs'"
+      ],
       "groupName": "Python dependencies"
     },
     // Disable Python updates
