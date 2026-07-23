@@ -1,0 +1,19 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":disableRateLimiting",
+    ":noUnscheduledUpdates",
+    // Avoid conflicts with custom `commitMessagePrefix`
+    ":semanticCommitsDisabled"
+  ],
+  "schedule": ["* 1-7 * * 2"],  // Tuesday 01:00-07:00 UTC
+  "lockFileMaintenance": {"enabled": true, "schedule": ["* 1-7 * * 2"]},  // Tuesday 01:00-07:00 UTC
+  "timezone": "Etc/UTC",
+  "enabledManagers": ["github-actions"],
+  "packageRules": [
+    // Later rules override earlier rules
+
+    {"matchManagers": ["github-actions"], "groupName": "GitHub actions"},
+  ],
+}
